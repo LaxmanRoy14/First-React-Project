@@ -1,0 +1,277 @@
+/* --- Navbar --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: black;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* --- Hero Section --- */
+section {
+    display: flex;
+    align-items: center;
+    padding: 60px 40px;
+    background-color: var(--bg);
+    color: var(--text-h);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section > div {
+    flex: 1;
+    text-align: left;
+}
+
+section h1 {
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    color: var(--text-h);
+}
+
+section p {
+    font-size: 20px;
+    color: var(--text);
+}
+
+section img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+    section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    
+    section > div {
+        text-align: center;
+    }
+    
+    section h1 {
+        font-size: 36px;
+    }
+}
+
+/* --- Home Filters --- */
+.filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin: 32px 0;
+    padding: 0 24px;
+    flex-wrap: wrap;
+}
+
+.textfield, 
+.filters select {
+    padding: 12px 16px;
+    font-size: 16px;
+    font-family: inherit;
+    color: var(--text-h);
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    min-width: 250px;
+}
+
+.textfield:focus, 
+.filters select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+/* --- Doctor Grid --- */
+.doctorcontainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    padding: 40px;
+}
+
+/* Optional: Center the "no doctors found" message */
+.doctorcontainer > h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--text);
+    margin-top: 20px;
+}
+
+/* --- Doctor Card --- */
+.doctorcard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid var(--border, #e5e4e7);
+    border-radius: 10px;
+    padding: 24px 20px;
+    background: var(--bg, #fff);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.doctorcard:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.doctorcard img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 3px solid var(--accent-bg, #eee);
+}
+
+.doctorcard h1 {
+    font-size: 24px;
+    margin: 0 0 4px 0;
+}
+
+.doctorcard div {
+    color: var(--accent, #aa3bff);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.doctorcard p {
+    color: var(--text);
+    margin-bottom: 20px;
+}
+
+.doctorcard > button {
+    width: 100%;
+    background: var(--accent, #aa3bff);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    margin-top: auto;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.doctorcard > button:hover {
+    background: #902be6;
+}
+
+/* --- Add Doctor Section Container --- */
+.adddoc-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    min-height: 70vh;
+}
+
+/* --- The Form Card --- */
+.adddoc-card {
+    background: var(--code-bg);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    width: 100%;
+    max-width: 450px; 
+    box-sizing: border-box;
+}
+
+.adddoc-card h3 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    color: var(--text-h);
+    font-size: 28px;
+    text-align: center;
+}
+
+/* --- Form Layout & Inputs --- */
+.adddoc-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.adddoc-form input,
+.adddoc-form select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    color: var(--text-h);
+    background: var(--bg);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+    cursor: pointer;
+}
+
+.adddoc-form input:focus,
+.adddoc-form select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+.adddoc-form input::placeholder {
+    color: var(--text);
+    opacity: 0.7;
+}
+
+.adddoc-form select:invalid,
+.adddoc-form select option[value=""] {
+    color: var(--text);
+    opacity: 0.7;
+}
+
+.adddoc-form select option {
+    color: var(--text-h);
+}
+
+/* --- Submit Button --- */
+.adddoc-form button {
+    width: 100%;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+    margin-top: 10px;
+}
+
+.adddoc-form button:hover {
+    background: #902be6;
+}
+
+.adddoc-form button:active {
+    transform: scale(0.98);
+}
