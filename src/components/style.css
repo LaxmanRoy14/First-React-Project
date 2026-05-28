@@ -8,12 +8,35 @@ nav {
     color: white;
 }
 
+nav h1 {
+    margin: 0;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+}
+
 .nav-links {
     display: flex;
-    gap: 20px;
-    font-size: 18px;
+    gap: 16px;
+    align-items: center;
+}
+
+/* Style the buttons inside the nav-links divs */
+.nav-links button {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 16px;
     font-weight: 500;
+    font-family: inherit;
     cursor: pointer;
+    padding: 10px 16px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Add a subtle highlight effect when hovering over the nav buttons */
+.nav-links button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 /* --- Hero Section --- */
@@ -74,12 +97,12 @@ section img {
 /* --- Home Filters --- */
 .filters {
     display: flex;
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
     gap: 16px;
     margin: 32px 0;
     padding: 0 24px;
-    flex-wrap: wrap;
 }
 
 .textfield, 
@@ -94,6 +117,8 @@ section img {
     outline: none;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
     min-width: 250px;
+    width: 100%; 
+    max-width: 400px; 
 }
 
 .textfield:focus, 
@@ -211,7 +236,7 @@ section img {
 /* --- Form Layout & Inputs --- */
 .adddoc-form {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     gap: 16px;
     width: 100%;
 }

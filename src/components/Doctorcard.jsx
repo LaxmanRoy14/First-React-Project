@@ -1,6 +1,7 @@
 import React from 'react';
-
-function Doctorcard({name, specialization, gender, salary}) {
+import { useNavigate } from 'react-router-dom'
+function Doctorcard({id, name, specialization, gender, salary}) {
+  let navigate = useNavigate()
   return (
     <div className='doctorcard'>
         <img 
@@ -10,7 +11,7 @@ function Doctorcard({name, specialization, gender, salary}) {
         <h1>{name}</h1>
         <div>{specialization}</div>
         <p>{gender}</p>
-        <button>View More</button>
+        <button onClick={()=>navigate(`/doctor/${id}`)}>View More</button>
     </div>
   )
 }
